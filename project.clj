@@ -6,5 +6,13 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [io.aleph/dirigiste "0.1.5"]
                  [metrics-clojure "2.10.0"]]
-  :global-vars  {*warn-on-reflection* true}
-  :repl-options {:init-ns pumila.core})
+  :global-vars {*warn-on-reflection* true}
+  :repl-options {:init-ns pumila.core}
+  :deploy-repositories [["snapshots" {:url "https://clojars.org/repo"
+                                      :username :env/clojars_username
+                                      :password :env/clojars_password
+                                      :sign-releases false}]
+                        ["releases" {:url "https://clojars.org/repo"
+                                     :username :env/clojars_username
+                                     :password :env/clojars_password
+                                     :sign-releases false}]])
